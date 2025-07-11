@@ -1,4 +1,6 @@
-# Summara - Your Personal Summarizer
+# Summara - Your Personal Summarizer!
+![Summara](https://github.com/user-attachments/assets/eb605d7d-5298-4de0-b5c5-f6feb2937a10)
+
 
 ### Overview:
 #### Summara is a lightweight and interactive web application designed to simplify the task of summarizing large texts. It supports multiple file formats and provides three styles of summarization: Minimal, Bullet Points, and Insightful. Summara also extracts key points, offering users a quick and informative overview of lengthy documents. With an emphasis on friendly UI and visual appeal, Summara includes thematic mascots and a polished front-end.
