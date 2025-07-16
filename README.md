@@ -41,3 +41,13 @@ Upload or paste text directly.
 Choose summary style from a dropdown.
 Display of summary and extracted keywords.
 ```
+### WorkFlow:
+![first](https://github.com/user-attachments/assets/8ef66c2f-3993-4610-b711-ea9e8281ce83)
+
+![second](https://github.com/user-attachments/assets/71525782-2dea-4bf1-b657-b3658d0abc22)
+
+![third](https://github.com/user-attachments/assets/3022250f-94dc-4133-83ca-54a2c58546f8)
+
+![fourth](https://github.com/user-attachments/assets/314a8d0a-16d5-48b8-8999-ed2109f781a6)
+
+
