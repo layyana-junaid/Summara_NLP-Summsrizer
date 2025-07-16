@@ -5,6 +5,21 @@
 ### Overview:
 #### Summara is a lightweight and interactive web application designed to simplify the task of summarizing large texts. It supports multiple file formats and provides three styles of summarization: Minimal, Bullet Points, and Insightful. Summara also extracts key points, offering users a quick and informative overview of lengthy documents. With an emphasis on friendly UI and visual appeal, Summara includes thematic mascots and a polished front-end.
 
+graph TD
+    A[User Launches App] --> B[Paste Text / Upload File]
+    B --> C[Flask Receives Request]
+    C --> D[Preprocess Text]
+    D --> E{Selected Mode?}
+    E -->|Minimal| F[Minimal Summary]
+    E -->|Bullets| G[Bullet Summary]
+    E -->|Insightful| H[Insightful Summary]
+    F --> I[Extract Keywords]
+    G --> I
+    H --> I
+    I --> J[Render result.html]
+    J --> K[Show Summary + Key Details]
+
+
 ### Goals:
 Provide an intuitive and visually appealing platform to summarize text content.
 Enable users to upload .txt, .pdf, and .docx files.
