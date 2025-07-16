@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #92a1c3, #d7dff1); 
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 20px;
+    }
+
+    .header-characters {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: -30px;
+    }
+
+    .mascot {
+      height: 120px;
+      width: auto;
+    }
+
+    h1 {
+      font-family: 'Berkshire Swash', cursive;
+      font-size: 7rem;
+      color: #27419f; 
+      text-shadow: 
+        3px 3px #9fb7e3,
+        4px 4px #261153;
+      margin-bottom: 0;
+    }
+
+    .tagline {
+      font-family: 'Berkshire Swash';
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: #27419f;
+      text-shadow: 
+        2px 2px #9fb7e3,
+        4px 4px #92a1c3;
+      margin-top: -10px;
+      margin-bottom: 30px;
+    }
+
+    .form-container {
+      background-color: #e7eae3; 
+      border-radius: 20px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.47);
+    }
+
+    label {
+      font-family: 'Fraunces';
+      font-weight: bold;
+      color: #1a2a4f;
+      display: block;
+      margin-bottom: 8px;
+      margin-top: 15px;
+    }
+
+    textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #dac1da;
+      border-radius: 10px;
+      margin-top: 5px;
+      resize: vertical;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .file-label {
+      background-color: #97bbdc; 
+      color: #314268;
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px #3c558f;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .file-label:hover {
+      transform: translateY(2px);
+      box-shadow: 0 4px #3c558f;
+    }
+
+    .button {
+      font-family: 'Fraunces', serif;
+      background-color: #97bbdc; 
+      color: #314268; 
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px #3c558f;
+      width: 100%;
+      margin-top: 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(2px);
+      box-shadow: 0 4px #3c558f;
+    }
+
+    .header-wrapper {
+     position: relative;
+     width: 100%;
+     max-width: 1000px;
+     text-align: center;
+     margin-bottom: 30px;
+    }
+
+    .mascot {
+     position: absolute;
+     height: 170px; 
+     width: auto;
+    }
+
+    .mascot.owl {
+     top: -10px;
+     left: 150px; 
+    }
+
+    .mascot.penguin {
+     top: -10px;
+     right: 150px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header-wrapper">
+  <img src="{{ url_for('static', filename='owl_blue.png') }}" alt="Owl Mascot" class="mascot owl">
+  <img src="{{ url_for('static', filename='penpen.png') }}" alt="Penguin Mascot" class="mascot penguin">
+  <h1>Summara</h1>
+  <p class="tagline">Your personal summarizer!</p>
+  </div>
+
+  <div class="form-container">
+    <form action="/summarize" method="post" enctype="multipart/form-data">
+      <label for="text">Paste Text:</label>
+      <textarea name="text" rows="5" placeholder="Enter your content here..."></textarea>
+
+      <label for="file">Or Upload File:</label>
+      <label for="file" class="file-label">📎Support: .txt, .pdf, and .docx</label>
+      <input type="file" name="file" id="file">
+
+      <label for="mode">Select Summary Style:</label>
+      <select name="mode">
+        <option value="minimal">Minimal</option>
+        <option value="bullets">Bullets</option>
+        <option value="insightful">Insightful</option>
+      </select>
+
+      <button type="submit" class="button">Summarize</button>
+    </form>
+  </div>
+
+</body>
+</html>

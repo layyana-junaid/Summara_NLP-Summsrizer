@@ -1,0 +1,14 @@
+from utilities.summarizer import summarize_minimal, summarize_bullets, summarize_insightful
+
+sample_text = """
+Natural Language Processing (NLP) is a subfield of Artificial Intelligence that focuses on enabling computers to understand and process human languages.
+Applications of NLP include sentiment analysis, chatbots, language translation, summarization, and information extraction.
+In recent years, transformer models like BERT and GPT have dramatically improved the state-of-the-art in many NLP tasks.
+Summarization systems help condense long texts into key points, which can be used in education, journalism, and customer service.
+"""
+
+print("🔹 Minimal Summary:\n", summarize_minimal(sample_text), "\n")
+print("🔹 Bullet Summary:")
+for point in summarize_bullets(sample_text):
+    print("-", point)
+print("\n🔹 Insightful Summary:\n", summarize_insightful(sample_text))
